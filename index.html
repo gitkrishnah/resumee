@@ -6,70 +6,92 @@
     <title>Sai Krishna Reddy Murthy - Data Analyst</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: #fff;
+            scroll-behavior: smooth;
+            transition: background 0.5s ease-in-out;
         }
         .container {
             width: 60%;
             margin: 50px auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
             border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container:hover {
+            transform: scale(1.02);
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ddd;
+            border-bottom: 3px solid #00c6ff;
             padding-bottom: 15px;
         }
         .header img {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
+            border: 3px solid #00c6ff;
         }
         h1 {
-            color: #333;
+            color: #00c6ff;
         }
-        .contact {
-            margin-top: 10px;
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #00c6ff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
         }
-        .section {
-            margin-top: 20px;
+        .toggle-btn:hover {
+            background: #ffeb3b;
+            color: #000;
         }
-        .section h2 {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-        }
-        .experience-item {
-            margin-bottom: 15px;
+        .dark-mode {
+            background: linear-gradient(to right, #000000, #434343);
+            color: #ddd;
         }
     </style>
 </head>
 <body>
+    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     <div class="container">
         <div class="header">
             <div>
                 <h1>SAI KRISHNA REDDY MURTHY</h1>
                 <p>Location: Hyderabad, India</p>
-                <p>Email: saikrishnareddymurthy1@gmail.com | Phone: 9542171831</p>
+                <p class="contact">Email: <a href="mailto:saikrishnareddymurthy1@gmail.com">saikrishnareddymurthy1@gmail.com</a> | Phone: 9542171831</p>
             </div>
             <img src="profile.jpg" alt="Sai Krishna Reddy Murthy">
         </div>
         
         <div class="section">
             <h2>Objective</h2>
-            <p>Results-oriented Data Analyst with 3+ years of experience transforming complex data into actionable insights. Proficient in Power BI, Python, SQL, ETL, data visualization, and Excel, delivering data-driven solutions to optimize decision-making and improve operational efficiency. Adept at creating interactive dashboards and conducting predictive analytics. Known for strong problem-solving skills and collaborative teamwork across cross-functional projects.</p>
+            <p>Results-oriented Data Analyst with 3+ years of experience transforming complex data into actionable insights. Proficient in Power BI, Python, SQL, ETL, data visualization, and Excel. Adept at creating interactive dashboards and conducting predictive analytics. Strong problem-solving skills and collaborative teamwork across cross functional teams.</p>
         </div>
         
         <div class="section">
             <h2>Skills</h2>
             <ul>
-                <li>Data Visualization Tools: Power BI, Tableau, Excel (Advanced)</li>
-                <li>Programming Languages: Python (Pandas, NumPy, Matplotlib, Seaborn), SQL</li>
+                <li>Power BI, Tableau, Excel (Advanced)</li>
+                <li>Python (Pandas, NumPy, Matplotlib, Seaborn), SQL</li>
                 <li>Databases: MySQL, PostgreSQL, SSIS</li>
                 <li>Microsoft Office: Excel (PivotTables, Macros), Word, PowerPoint</li>
                 <li>Other Tools: JIRA, Git</li>
@@ -83,10 +105,10 @@
                 <p>October 2023 - December 2024</p>
                 <ul>
                     <li>Designed and developed interactive dashboards in Power BI, providing key insights to stakeholders and reducing reporting time by 40%.</li>
-                    <li>Conducted advanced data analysis in Python, utilizing libraries like Pandas and NumPy, resulting in actionable recommendations that boosted revenue by 15%.</li>
+                    <li>Conducted advanced data analysis in Python, utilizing libraries like Pandas and NumPy, resulting in actionable recommendations that boosted revenue by 15%..</li>
                     <li>Automated data extraction and transformation processes in SQL, improving data pipeline efficiency by 30%.</li>
                     <li>Created predictive models to forecast sales trends, achieving a 92% accuracy rate and enabling better inventory management.</li>
-                    <li>Collaborated with cross-functional teams to identify KPIs and implement data-driven strategies, increasing operational efficiency.</li>
+                    <li>Collaborated with cross-functional teams to identify KPIs and implement data-driven strategies, increasing operational efficiency</li>
                 </ul>
             </div>
             <div class="experience-item">
@@ -110,7 +132,7 @@
                     <li>Applied audio processing techniques to analyze and process sound data for applications in speech recognition and audio feature extraction.</li>
                     <li>Collaborated with cross-functional teams to implement processing pipelines and optimize performance for data-intensive tasks.</li>
                 </ul>
-            </div>
+              </div>
         </div>
         
         <div class="section">
@@ -118,6 +140,15 @@
             <p>Master's, University of Hertfordshire (2023)</p>
             <p>Bachelor's, Ellenki College of Engineering and Technology (2019)</p>
         </div>
+        
+        <a class="download-btn" href="resume.pdf" download>Download Resume</a>
     </div>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 </body>
 </html>
+4
